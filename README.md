@@ -16,11 +16,15 @@ make install
 mkdir GiBUU; cd GiBUU
 
 wget --content-disposition https://gibuu.hepforge.org/downloads?f=release2023.tar.gz
+
 wget --content-disposition https://gibuu.hepforge.org/downloads?f=buuinput2023.tar.gz
+
 wget --content-disposition https://gibuu.hepforge.org/downloads?f=libraries2023_RootTuple.tar.gz
 
 tar -xzvf buuinput2023.tar.gz
+
 tar -xzvf release2023.tar.gz
+
 tar -xzvf libraries2023_RootTuple.tar.gz
 
 cd release
