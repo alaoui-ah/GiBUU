@@ -42,6 +42,6 @@ make withROOT=1 PDF=LHAPDF
 
 3. gibuu2lund
 
-mkdir gib2lund; cd gib2lund
+mkdir gibuu2lund; cd gibuu2lund
 
 make
