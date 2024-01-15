@@ -52,17 +52,29 @@ usage: run_gibuu.py [-h] -mode MODE -ebeam EBEAM -seed SEED -targ TARG -tgzpos T
                     RUN1 -run2 RUN2 -oudir OUDIR
 
 Arguments:
+
   -h, --help      show this help message and exit
+
   -mode MODE      test, farm
+  
   -ebeam EBEAM    Beam energy
-  -seed SEED      0: use current time as seed, 1: use 1 as initial seed to python random function, otherwise whatever value you entered will
-                  be used as seed for the generator
+  
+  -seed SEED      0: use current time as seed, 1: use 1 as initial seed to python random function, otherwise whatever value you entered will be used as seed for the generator
+
   -targ TARG      p,D,He,Li,Be,C,N,Al,Ca,Fe,Cu,Ag,Sn,Xe,Au,Pb
+  
   -tgzpos TGZPOS  Target z position
+  
   -tgzlen TGZLEN  Target z length
+  
   -tgrad TGRAD    Target Radius
+  
   -kt KT          kt value
+  
   -expt EXPT      hermes,clas6,clas11,none
+  
   -run1 RUN1      first run
+  
   -run2 RUN2      last run
-  -oudir OUDIR    location of output files.gibuu/2003/<eBeam>GeV/<targ>/kt_<kt> will be appended to oudir
+  
+  -oudir OUDIR    location of the output files. Note: "gibuu/2003/<eBeam>GeV/<targ>/kt_<kt>" will be appended to OUDIR
