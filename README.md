@@ -1,6 +1,6 @@
 # LHAPDF, GiBUU and gibuu2lund installation
 
-1. LHAPDF
+#1. LHAPDF
 
 mkdir lhapdf; cd lhapdf
 
@@ -16,7 +16,7 @@ make
 
 make install
 
-2. GiBUU
+#2. GiBUU
 
 mkdir GiBUU; cd GiBUU
 
@@ -40,7 +40,7 @@ make buildRootTuple
 
 make withROOT=1 PDF=LHAPDF
 
-3. gibuu2lund
+#3. gibuu2lund
 
 mkdir gibuu2lund; cd gibuu2lund
 
@@ -57,7 +57,7 @@ Arguments:
 
   -mode MODE      test, farm
   
-  -ebeam EBEAM    Beam energy
+  -ebeam EBEAM    Beam energy in GeV
   
   -seed SEED      0: use current time as seed, 1: use 1 as initial seed to python random function, otherwise whatever value you entered will be used as seed for the generator
 
@@ -71,10 +71,12 @@ Arguments:
   
   -kt KT          kt value
   
-  -expt EXPT      hermes,clas6,clas11,none
+  -expt EXPT      Hermes,clas6,clas11,none
   
   -run1 RUN1      first run
   
   -run2 RUN2      last run
   
   -oudir OUDIR    location of the output files. Note: "gibuu/2003/<eBeam>GeV/<targ>/kt_<kt>" will be appended to OUDIR
+
+  The script will generate, among other files, a root and a lund file
