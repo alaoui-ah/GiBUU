@@ -1,4 +1,4 @@
-# LHAPDF and GiBUU
+# LHAPDF, GiBUU and gibuu2lund installation
 
 1. LHAPDF
 
@@ -40,7 +40,7 @@ make buildRootTuple
 
 make withROOT=1 PDF=LHAPDF
 
-3. GIB2LUND
+3. gibuu2lund
 
 mkdir gib2lund; cd gib2lund
 
