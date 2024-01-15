@@ -2,7 +2,7 @@
 
 ##
 # Usage:
-# run_gibuu.py -mode MODE -ebeam EBEAM -seed SEED -targ TARG -tgzpos TGZPOS -tgzlen TGZLEN -tgrad TGRAD -kt KT -expt EXPT -run1 RUN1 -run2 RUN2
+# run_gibuu.py -mode MODE -ebeam EBEAM -seed SEED -targ TARG -tgzpos TGZPOS -tgzlen TGZLEN -tgrad TGRAD -kt KT -expt EXPT -run1 RUN1 -run2 RUN2 -oudir OUDIR
 # Arguments:
 #  -h, --help : show this help message and exit
 #  -mode MODE : test, farm
@@ -16,7 +16,8 @@
 #  -kt : KT value parp(91) 0.64 !D=0.44 ! width intrinsic kT
 #  -run1 RUN1 : first run
 #  -run2 RUN2 : last run
-# ex: ./run_gibuu.py -mode test -ebeam 11.0 -seed 0 -targ C -tgzpos -3.0 -tgzlen 0.5 -tgrad 1.0 -kt 0.64 -expt clas11 -run1 1 -run2 1
+#  -oudir OUDIR : location of output files
+# ex: ./run_gibuu.py -mode test -ebeam 11.0 -seed 0 -targ C -tgzpos -3.0 -tgzlen 0.5 -tgrad 1.0 -kt 0.64 -expt clas11 -oudir /... -run1 1 -run2 1
 ##
 
 import os
@@ -32,7 +33,6 @@ import myfuncs
 from dotenv import load_dotenv
 
 hhome = os.environ['HOME']
-hst = socket.gethostname()[0:3]
 
 now = datetime.datetime.now()
 startTime = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -54,6 +54,7 @@ ap.add_argument("-kt", required=True, help="kt value")
 ap.add_argument("-expt", required=True, help="hermes,clas6,clas11,none")
 ap.add_argument("-run1", required=True, help="first run")
 ap.add_argument("-run2", required=True, help="last run")
+ap.add_argument("-oudir", required=True, help="location of output files.gibuu/2003/<eBeam>GeV/<targ>/kt_<kt> will be appended to oudir")
 myargs = vars(ap.parse_args())
 
 mode = myargs['mode']
@@ -67,6 +68,7 @@ kt = myargs['kt']
 expt = myargs['expt']
 run1 = int(myargs['run1'])
 run2 = int(myargs['run2'])
+oudir = myargs['oudir']
 
 print(f"mode: {mode}")
 print(f"eBeam: {eBeam}")
@@ -79,6 +81,7 @@ print(f"kt: {kt}")
 print(f"experiment: {expt}")
 print(f"run1: {run1}")
 print(f"run2: {run2}")
+print(f"oudir: {oudir}")
 
 ##############################################
 
@@ -201,9 +204,7 @@ if os.path.isdir(softDir) is False:
 
 print(f"softDir is set to {softDir}")
 
-topOuDir = f"/work/clas12/ahmed/mc/".strip()
-if hst == "ui0":
-	topOuDir = f"/eos/user/a/{user}/mc/".strip()
+topOuDir = f"{oudir}/".strip()
 
 if mode == "test":
   topOuDir = f"{topOuDir}/test/".strip()

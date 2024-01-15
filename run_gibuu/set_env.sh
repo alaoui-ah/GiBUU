@@ -82,6 +82,7 @@ echo
 echo "LD_LIBRARY_PATH  is set to ${LD_LIBRARY_PATH}"
 echo
 
+echo "USER=${USER}" >> dot.env
 echo "SOFT=${SOFT}" >> dot.env
 echo "PATH=${PATH}" >> dot.env
 echo "LD_LIBRARY_PATH=${LD_LIBRARY_PATH}" >> dot.env
