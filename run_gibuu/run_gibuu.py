@@ -367,7 +367,7 @@ for ir in range(int(run1), int(run2) + 1, 1):
 		fin.write(f"#SBATCH --constraint={osName}\n")
 		fin.write(f"#SBATCH --time={myTime}\n")
 		fin.write(f"#SBATCH --mem={memUsage}\n")
-		fin.write(f"#SBATCH --mail-user={email}\n")
+		#fin.write(f"#SBATCH --mail-user={email}\n")
 		fin.write("\n")
 		fin.write("ulimit -c unlimited\n")
 		fin.write("\n")
