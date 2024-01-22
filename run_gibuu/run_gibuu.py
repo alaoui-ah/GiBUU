@@ -17,7 +17,7 @@
 #  -run1 RUN1 : first run
 #  -run2 RUN2 : last run
 #  -oudir OUDIR : location of output files
-# ex: ./run_gibuu.py -mode test -ebeam 11.0 -seed 0 -targ C -tgzpos -3.0 -tgzlen 0.5 -tgrad 1.0 -kt 0.64 -expt clas11 -oudir /... -run1 1 -run2 1
+# ex: ./run_gibuu.py -mode test -ebeam 11.0 -seed 0 -targ C -tgzpos -3.0 -tgzlen 0.5 -tgrad 1.0 -kt 0.64 -expt clas11 -run1 1 -run2 1 -oudir /work/
 ##
 
 import os
