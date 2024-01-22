@@ -26,7 +26,8 @@ lundFile = gene + "_" + btr + ".lund"
 
 os.chdir(ouDir)
 
-geneExe = f"{softDir}/GiBUU/{gibVer}/release/testRun/GiBUU.x".strip()
+#geneExe = f"{softDir}/GiBUU/{gibVer}/release/testRun/GiBUU.x".strip()
+geneExe = f"{softDir}/GiBUU/GiBUU_{gibVer}".strip()
 geneCmd = f"source {scriptDir}/set_env.sh; {geneExe} < {optFile} 2>&1 | tee {gibLogFile}".strip()
 print(geneCmd)
 os.system(geneCmd)
