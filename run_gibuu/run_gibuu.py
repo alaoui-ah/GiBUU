@@ -371,7 +371,7 @@ for ir in range(int(run1), int(run2) + 1, 1):
 		fin.write("\n")
 		fin.write("ulimit -c unlimited\n")
 		fin.write("\n")
-		fin.write("cd {ouDir}\n")
+		fin.write(f"cd {ouDir}\n")
 		fin.write("\n")
 		fin.write("echo hostname = \`hostname\`\n")
 		fin.write("\n")
