@@ -183,14 +183,13 @@ int main(int argc, char *argv[])
 
     for(int it=0; it<Ntracks; it++)
     {
-      //cout <<vpid[it] << endl;
       int icharge = (int) TDatabasePDG::Instance()->GetParticle(vpid[it])->Charge()/3.;
 
       double mass = sqrt(sqr(vE[it]) - sqr(vPx[it]) - sqr(vPy[it]) - sqr(vPz[it]));
       ou_lund << setw(5)  << it+2 <<
                  setw(5)  << fixed << setprecision(1) << (double)icharge <<
                  setw(5)  << dummy  << //info not available in gibuu
-                 setw(12) << vpid[it]     <<
+                 setw(12) << vpid[it] <<
                  setw(12) << dummy <<  //info not available in gibuu
                  setw(12) << dummy << //info not available in gibuu
                  setw(10) << fixed << setprecision(4) << vPx[it]    <<
@@ -198,9 +197,9 @@ int main(int argc, char *argv[])
                  setw(10) << fixed << setprecision(4) << vPz[it]    <<
                  setw(10) << fixed << setprecision(4) << vE[it]     <<
                  setw(10) << fixed << setprecision(4) << mass  <<
-                 setw(10) << fixed << setprecision(4) << vert3.x() <<
-                 setw(10) << fixed << setprecision(4) << vert3.y() <<
-                 setw(10) << fixed << setprecision(4) << vert3.z() << endl;
+                 setw(10) << fixed << setprecision(4) << vert3.X() <<
+                 setw(10) << fixed << setprecision(4) << vert3.Y() <<
+                 setw(10) << fixed << setprecision(4) << vert3.Z() << endl;
     } //END OF LOOP OVER TRACKS
 
       ie++;
