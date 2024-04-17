@@ -160,7 +160,7 @@ int main(int argc, char *argv[])
 
       double mass_ele = sqrt(sqr(pele) - sqr(vele.Mag()));
 
-      double charge_ele = (int) TDatabasePDG::Instance()->GetParticle(pid_ele)->Charge()/3.;
+      double charge_ele = TDatabasePDG::Instance()->GetParticle(pid_ele)->Charge()/3.;
 
       int dummy = 1;
 
@@ -183,11 +183,11 @@ int main(int argc, char *argv[])
 
     for(int it=0; it<Ntracks; it++)
     {
-      int icharge = (int) TDatabasePDG::Instance()->GetParticle(vpid[it])->Charge()/3.;
+      double icharge = TDatabasePDG::Instance()->GetParticle(vpid[it])->Charge()/3.;
 
       double mass = sqrt(sqr(vE[it]) - sqr(vPx[it]) - sqr(vPy[it]) - sqr(vPz[it]));
       ou_lund << setw(5)  << it+2 <<
-                 setw(5)  << fixed << setprecision(1) << (double)icharge <<
+                 setw(5)  << fixed << setprecision(1) << icharge <<
                  setw(5)  << dummy  << //info not available in gibuu
                  setw(12) << vpid[it] <<
                  setw(12) << dummy <<  //info not available in gibuu
