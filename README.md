@@ -34,8 +34,6 @@ tar -xzvf libraries2023_RootTuple.tar.gz
 
 cd release
 
-ln -fs lhapdf/LHAPDF-6.X.Y/lib/liblhapdf.a objects/LIB/lib/liblhapdf.a
-
 make buildRootTuple
 
 make withROOT=1 PDF=LHAPDF
