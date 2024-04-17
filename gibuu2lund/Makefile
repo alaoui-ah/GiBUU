@@ -2,11 +2,11 @@ EXE      = $(shell basename $(CURDIR)).exe
 
 ############
 
-HHINCDIR  = ./include/
+HHINCDIR  = ./
 INC_HH    = $(notdir $(wildcard $(HHINCDIR)*.hh))
 HH_INC    = $(addprefix $(HHINCDIR),$(INC_HH))
 
-CCSRCDIR  = ./src/
+CCSRCDIR  = ./
 SRC_CC    = $(notdir $(wildcard $(CCSRCDIR)*.cc))
 CC_SRC    = $(addprefix $(CCSRCDIR),$(SRC_CC))
 
@@ -30,7 +30,7 @@ MY_INCLUDE       = -I$(HHINCDIR)
 ROOT_INCLUDE     = -I$(shell $(ROOCFG) --incdir)
 
 MY_LIBRARY       = 
-ROOT_LIBRARY     = $(shell $(ROOCFG) --glibs) -ltbb
+ROOT_LIBRARY     = $(shell $(ROOCFG) --glibs) -ltbb -lEG
 
 INCLUDES  = $(MY_INCLUDE) \
             $(ROOT_INCLUDE)
@@ -47,6 +47,7 @@ $(EXE): $(CC_OBJ) $(HH_INC)
 	@echo 'Start compilation at : '
 	@date
 	$(LD) $(LDFLAGS) $(INCLUDES) -o $@ $(CC_OBJ) $(LIBRARIES)
+	/bin/rm -rf $(CCOBJDIR)
 	@echo ' '
 	@echo 'done.'
 
